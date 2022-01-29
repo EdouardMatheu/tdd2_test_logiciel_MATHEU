@@ -34,3 +34,12 @@ def deriv2(l):
 		rt_l.append((temp_l[i+1]-temp_l[i])/interval)
 
 	return rt_l
+
+def derivapprox(f, ord, pt):
+	return -1
+
+def f_x2(x):
+	return x**2
+
+def f_minus2x(x):
+	return -2*(x**3) 

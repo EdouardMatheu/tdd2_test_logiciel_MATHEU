@@ -29,5 +29,15 @@ class TestFunctions(unittest.TestCase):
 		self.assertEqual(functions.deriv2(['h', 'e', 'l', 'l', 'o']), None)
 		self.assertEqual(functions.deriv2([1, 2, 3, 4, 5]), None)
 
+	def test_derivappro(self):
+		self.assertEqual(functions.derivapprox(functions.f_x2, 0.0001, 2.379561), 4.7591)
+		self.assertEqual(functions.derivapprox(functions.f_x2, 0.1, 2.379561), 4.8)
+		self.assertEqual(functions.derivapprox(functions.f_x2, 0.0, 2.379561), 0.0)
+		self.assertEqual(functions.derivapprox(functions.f_x2, 0.001, 0.00000001), 0.0)
+		self.assertEqual(functions.derivapprox(functions.f_minus2x, 0.0001, 2.379561), -26.9476)
+		self.assertEqual(functions.derivapprox(functions.f_minus2x, 0.1, 2.379561), -26.95)
+		self.assertEqual(functions.derivapprox(functions.f_minus2x, 0.0, 2.379561), 0.0)
+		self.assertEqual(functions.derivapprox(functions.f_minus2x, 0.001, 0.00000001), 0.0)
+
 if __name__ == '__main__':
 	unittest.main()
