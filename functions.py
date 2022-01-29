@@ -5,3 +5,6 @@ def mirror(txt, a):
 	for i in range(a, -1, -1) :
 		rt_txt += txt[i]
 	return rt_txt
+
+def deriv(l):
+	return -1
