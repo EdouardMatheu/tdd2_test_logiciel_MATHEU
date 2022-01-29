@@ -36,10 +36,20 @@ def deriv2(l):
 	return rt_l
 
 def derivapprox(f, ord, pt):
-	return -1
+	h = 0.00000001
+	fp = (f(pt+h)-f(pt))/h
+	if ord == 0.0 :
+		return 0.0
+	if ord < 0.0 or ord > 1.0:
+		return None
+	rst = fp % ord
+	rt_f = fp - rst
+	if(rst >= 5*ord*0.1):
+		rt_f += ord
+	return rt_f
 
 def f_x2(x):
 	return x**2
 
-def f_minus2x(x):
+def f_minus2x3(x):
 	return -2*(x**3) 
