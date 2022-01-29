@@ -18,3 +18,6 @@ def deriv(l):
 		rt_l.append((l[i+1]-l[i])/interval)
 
 	return rt_l
+
+def deriv2(l):
+	return -1
