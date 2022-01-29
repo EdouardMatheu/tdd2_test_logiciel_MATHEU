@@ -11,10 +11,13 @@ class TestFunctions(unittest.TestCase):
 		self.assertEqual(functions.mirror("abcde", -1), "")
 
 	def test_deriv(self):
-		self.assertEqual(functions.deriv({0.0, 1.0, 2.0, 3.0, 4.0}), {1.0, 1.0, 1.0, 1.0})
-		self.assertEqual(functions.deriv({0.0, 1.0, 4.0, 9.0, 16.0}), {2.0, 4.0, 6.0, 8.0})
-		self.assertEqual(functions.deriv({0.0, -1.0, -2.0, -3.0, -4.0}), {-1.0, -1.0, -1.0, -1.0})
-		self.assertEqual(functions.deriv({1.0, 1.0, 1.0, 1.0, 1.0}), {0.0, 0.0, 0.0, 0.0})
+		self.assertEqual(functions.deriv([0.0, 1.0, 2.0, 3.0, 4.0]), [1.0, 1.0, 1.0, 1.0])
+		self.assertEqual(functions.deriv([0.0, 1.0, 4.0, 9.0, 16.0]), [1.0, 3.0, 5.0, 7.0])
+		self.assertEqual(functions.deriv([0.0, -1.0, -2.0, -3.0, -4.0]), [-1.0, -1.0, -1.0, -1.0])
+		self.assertEqual(functions.deriv([1.0, 1.0, 1.0, 1.0, 1.0]), [0.0, 0.0, 0.0, 0.0])
+		self.assertEqual(functions.deriv([1.0]), None)
+		self.assertEqual(functions.deriv(['h', 'e', 'l', 'l', 'o']), None)
+		self.assertEqual(functions.deriv([1, 2, 3, 4, 5]), None)
 
 if __name__ == '__main__':
 	unittest.main()
